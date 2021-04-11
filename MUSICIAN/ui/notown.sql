@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2021 at 05:17 PM
+-- Generation Time: Apr 11, 2021 at 01:47 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
-  `Ph_No` int(10) NOT NULL,
+  `Ph_No` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `FullAddress` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -39,11 +39,11 @@ CREATE TABLE `addresses` (
 --
 
 CREATE TABLE `albums` (
-  `A_Id` int(100) NOT NULL DEFAULT 0,
+  `A_Id` int(4) NOT NULL,
   `A_Name` text COLLATE utf8_unicode_ci NOT NULL,
   `Copyright_Date` date NOT NULL,
-  `Format` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `SSn` int(100) NOT NULL
+  `Format` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Ssn` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -64,9 +64,9 @@ CREATE TABLE `instruments` (
 --
 
 CREATE TABLE `musicians` (
-  `Ssn` int(100) NOT NULL,
+  `Ssn` int(4) NOT NULL,
   `Name` text COLLATE utf8_unicode_ci NOT NULL,
-  `Ph_No` int(10) NOT NULL
+  `Ph_No` varchar(12) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -76,7 +76,7 @@ CREATE TABLE `musicians` (
 --
 
 CREATE TABLE `performs` (
-  `Ssn` int(100) NOT NULL,
+  `Ssn` int(4) NOT NULL,
   `Title` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -88,7 +88,7 @@ CREATE TABLE `performs` (
 
 CREATE TABLE `plays` (
   `Ins_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Ssn` int(100) NOT NULL
+  `Ssn` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -100,7 +100,7 @@ CREATE TABLE `plays` (
 CREATE TABLE `songs` (
   `Title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Author` text COLLATE utf8_unicode_ci NOT NULL,
-  `A_Id` int(100) NOT NULL
+  `A_Id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -118,7 +118,7 @@ ALTER TABLE `addresses`
 --
 ALTER TABLE `albums`
   ADD PRIMARY KEY (`A_Id`),
-  ADD KEY `Ssn` (`SSn`);
+  ADD KEY `Ssn` (`Ssn`);
 
 --
 -- Indexes for table `instruments`
@@ -131,7 +131,7 @@ ALTER TABLE `instruments`
 --
 ALTER TABLE `musicians`
   ADD PRIMARY KEY (`Ssn`),
-  ADD KEY `ph_no` (`Ph_No`);
+  ADD KEY `Ph_No` (`Ph_No`);
 
 --
 -- Indexes for table `performs`
@@ -155,6 +155,22 @@ ALTER TABLE `songs`
   ADD KEY `A_Id` (`A_Id`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `albums`
+--
+ALTER TABLE `albums`
+  MODIFY `A_Id` int(4) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `musicians`
+--
+ALTER TABLE `musicians`
+  MODIFY `Ssn` int(4) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -162,33 +178,33 @@ ALTER TABLE `songs`
 -- Constraints for table `albums`
 --
 ALTER TABLE `albums`
-  ADD CONSTRAINT `Ssn` FOREIGN KEY (`SSn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `albums_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `musicians`
 --
 ALTER TABLE `musicians`
-  ADD CONSTRAINT `ph_no` FOREIGN KEY (`Ph_No`) REFERENCES `addresses` (`Ph_No`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `musicians_ibfk_1` FOREIGN KEY (`Ph_No`) REFERENCES `addresses` (`Ph_No`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `performs`
 --
 ALTER TABLE `performs`
-  ADD CONSTRAINT `Title` FOREIGN KEY (`Title`) REFERENCES `songs` (`Title`),
-  ADD CONSTRAINT `performs_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`);
+  ADD CONSTRAINT `performs_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `performs_ibfk_2` FOREIGN KEY (`Title`) REFERENCES `songs` (`Title`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `plays`
 --
 ALTER TABLE `plays`
-  ADD CONSTRAINT `Ins_name` FOREIGN KEY (`Ins_name`) REFERENCES `instruments` (`Ins_Name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `plays_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `plays_ibfk_1` FOREIGN KEY (`Ins_name`) REFERENCES `instruments` (`Ins_Name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `plays_ibfk_2` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `songs`
 --
 ALTER TABLE `songs`
-  ADD CONSTRAINT `A_Id` FOREIGN KEY (`A_Id`) REFERENCES `albums` (`A_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `songs_ibfk_1` FOREIGN KEY (`A_Id`) REFERENCES `albums` (`A_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
