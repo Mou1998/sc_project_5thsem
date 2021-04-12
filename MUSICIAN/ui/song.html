@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Album</title>
+        <title>Song</title>
         <link href="style.css" rel="stylesheet" />
     </head>
 
@@ -13,14 +13,13 @@
     
         <div class="form-wrap">
             
-            <form role="form" method="POST" action="album.php">
+            <form role="form" method="POST" action="song.php">
         
-                <h1>Album Record</h1>
-                <input type="text" placeholder="Album Name" name="a_name" required>
-                <input type="date" placeholder="Copyright Date" name="copyright" required>
-                <input type="text" placeholder="Album Format" name="format" required>
-                <input type="number" placeholder="Producer ID" name="producer" required>
-                
+                <h1>Song Record</h1>
+                <input type="text" placeholder="Song Title" name="title" required>
+                <input type="text" placeholder="Author" name="author" required>
+                <input type="number" placeholder="Album ID" name="album" required>
+                <input type="text" placeholder="Musician SSN" name="ssn" required>
 
                 <input type="submit" class="btn btn-md btn-warning btn-block" name="add" value="Add+">
 
