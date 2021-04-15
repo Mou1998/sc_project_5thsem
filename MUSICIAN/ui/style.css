@@ -9,12 +9,12 @@ body{background-image: url("bg.jpg");
     font-family: sans-serif;
 }
         
-.form-wrap{ width: 320px; background: #c28d8d; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-h1{text-align: center; color: rgb(68, 10, 107); font-weight: normal; margin-bottom: 20px;}
+.form-wrap{ width: 320px; background: transparent; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+h1{text-align: center; color: rgb(247, 243, 250); font-weight: normal; margin-bottom: 20px;}
         
-input{width: 100%; background: none; border: 1px solid rgb(44, 18, 104); border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: rgb(255, 255, 255);}
+input{width: 100%; background: none; border: 3px solid rgb(84, 223, 119); border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: rgb(255, 255, 255);}
         
-input[type="submit"]{ background: #88f07b; border: 0; cursor: pointer; color: #3f1379;}
+input[type="submit"]{ background: #88f07b; border: 0; cursor: pointer; color: #fcfcfc;}
 input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
 .button
 {
@@ -22,7 +22,7 @@ input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
   text-align: center;
   width: 200px;
   padding: 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: #f8f8f8;
   font-family: poppins;
   font-weight: 1000;
@@ -84,5 +84,5 @@ hr.rounded {
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
   }
-::placeholder{color: rgb(35, 9, 104);}
+::placeholder{color: rgb(7, 7, 7); font-size: 20px;font-weight: bold;}
     
