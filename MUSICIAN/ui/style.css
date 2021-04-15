@@ -1,5 +1,5 @@
 
-*{margin: 5px; padding: 0;}
+*{margin: 0px; padding: 0;}
 body{background-image: url("bg.jpg");
     background-color: #cccccc; /* Used if the image is unavailable */
     height: 600px; /* You must set a specified height */
@@ -22,16 +22,16 @@ input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
   text-align: center;
   width: 200px;
   padding: 20px;
-  font-size: 10px;
-  color: #15f4ee;
+  font-size: 16px;
+  color: #f8f8f8;
   font-family: poppins;
-  font-weight: 400;
+  font-weight: 1000;
   border: 5px solid #15f4ee;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 100px;
-  transition: 1.5s;
-    background-color: black;
+  transition: 0.1s;
+  background-color: transparent;
 }
 
 .button:hover
@@ -61,12 +61,13 @@ hr.rounded {
     border-radius: 30px;
     
   }    
-.h3{
+/* .h3{
       position: relative;
       left: 50%;
 
-  } 
+  }  */
   .glow {
+    padding: 10px;
     font-size: 40px;
     color: #fff;
     text-align: center;
