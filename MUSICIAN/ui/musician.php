@@ -18,10 +18,12 @@ $run_query=mysqli_query($dbcon,$check_c);
 
     if(mysqli_num_rows($run_query)>0)
     {
-        echo "<script>alert('There may be wrong information,Please try again!')</script>";
-        // echo"<script>window.open('musicianform.php','_self')</script>";
-        
-        exit();
+    ?>
+        <script type="text/javascript"> 
+        alert('Data successfully saved'); 
+        window.location.href = "index.html";
+        </script>;
+    <?php
     }
 $check_a="select * from addresses WHERE (Ph_No='$m_ph' and FullAddress='$m_add') ";
 $run_query=mysqli_query($dbcon,$check_a);
@@ -30,7 +32,6 @@ $run_query=mysqli_query($dbcon,$check_a);
     {
         $musiaddress="insert into addresses (Ph_No,FullAddress) VALUE ('$m_ph','$m_add')";
         mysqli_query($dbcon,$musiaddress);
-        exit();
     }
 
 $savemusician="insert into musicians (Name,Ph_No) VALUE ('$m_name','$m_ph')";
@@ -39,10 +40,6 @@ mysqli_query($dbcon,$savemusician);
 $musi = "select Ssn from musicians where Ssn=(select max(Ssn) from musicians)" ;
 $ssnid1 = mysqli_query($dbcon,$musi);
 $row = mysqli_fetch_array($ssnid1)["Ssn"];
-    /*while($row = mysqli_fetch_array($ssnid1))
-    {
-        echo $row["Ssn"];
-    }*/
 
 foreach ($ins_array as $value)
 {
@@ -69,10 +66,12 @@ foreach ($ins_array as $value)
     }
     
 }
-
-echo"<script>alert('Data successfully saved')</script>";
-echo "<script>window.open('index.php','_self')</script>";
-
+?>
+<script type="text/javascript"> 
+        alert('Data successfully saved'); 
+        window.location.href = "index.html";
+</script>;
+<?php
 
 }
 
@@ -90,19 +89,28 @@ if(isset($_POST['edit']))
 
         if(mysqli_num_rows($run_query)<1)
         {
-            echo "<script>alert('Musician does not exits!')</script>";
+            //echo "<script>alert('Musician does not exits!')</script>";
             // echo"<script>window.open('musician.php','_self')</script>";
-            exit();
+        ?>
+            <script type="text/javascript"> 
+                alert("Musician doesn't exist"); 
+                window.location.href = "index.html";
+            </script>;
+        <?php
         }
     $check_c="select * from addresses WHERE (Ph_No='$m_ph' and not FullAddress='$m_add') or (not Ph_No='$m_ph' and FullAddress='$m_add') ";
     $run_query=mysqli_query($dbcon,$check_c);
         
         if(mysqli_num_rows($run_query)>0)
         {
-            echo "<script>alert('There may be wrong information,Please try again!')</script>";
+            //echo "<script>alert('There may be wrong information,Please try again!')</script>";
             // echo"<script>window.open('musicianform.php','_self')</script>";
-                
-            exit();
+        ?>
+            <script type="text/javascript"> 
+                alert("There may be wrong information,Please try again!"); 
+                window.location.href = "index.html";
+            </script>;
+        <?php
         }
     
     $check_a="select * from addresses WHERE (Ph_No='$m_ph' and FullAddress='$m_add') ";
@@ -110,13 +118,18 @@ if(isset($_POST['edit']))
             
         if(mysqli_num_rows($run_query)<1)
         {
-            $musiaddress="insert into addresses (Ph_No,FullAddress) VALUE ('$m_ph','$m_add')";
+            $musiaddress="INSERT into addresses (Ph_No,FullAddress) VALUE ('$m_ph','$m_add')";
             mysqli_query($dbcon,$musiaddress);
-            exit();
         }
         
-    $savemusician="update musicians set Name = '$m_name' , Ph_No = '$m_ph' where Ssn='$m_id' ";
+    $savemusician="UPDATE musicians set Name = '$m_name' , Ph_No = '$m_ph' WHERE Ssn='$m_id' ";
     mysqli_query($dbcon,$savemusician);
+?>
+    <script type="text/javascript"> 
+        alert("successfully Update"); 
+        window.location.href = "index.html";
+    </script>;
+<?php
 
 }
 
@@ -126,23 +139,25 @@ if(isset($_POST['delete']))
 {
     $m_id = $_POST['m_id'];
 
-    $check_c="select * from musicians WHERE (Ssn='$m_id' and Existance='Exist') ";
-    $run_query=mysqli_query($dbcon,$check_c);
-
+    $check_c="SELECT * from musicians WHERE Ssn='$m_id' and Existance='Exist' ";
+    if($run_query=mysqli_query($dbcon,$check_c)){
         if(mysqli_num_rows($run_query)<1)
         {
-            echo "<script>alert('Musician already does not exits!')</script>";
-            // echo"<script>window.open('musician.php','_self')</script>";
-            exit();
+        ?>
+            <script type="text/javascript"> 
+                alert("Musician already doesn't exist"); 
+                window.location.href = "index.html";
+            </script>;
+        <?php
         }
-    
-    
-    $savemusician="update musicians set Existance = 'Not_Exist' where Ssn='$m_id' ";
-    mysqli_query($dbcon,$savemusician);
-    // echo "<script>alert('Musician's existance removed!')</script>";
-
+    }
+    $savemusician="UPDATE musicians set Existance = 'Not_Exist' where Ssn='$m_id' ";
+    mysqli_query($dbcon,$savemusician);?>
+    <script type="text/javascript"> 
+        alert("Musician's existance removed\!"); 
+        window.location.href = "index.html";
+    </script>;
+<?php
 }
-
-
 ?>
 
