@@ -1,6 +1,13 @@
 
-*{margin: 0; padding: 0;}
-body{background: #25973dec; font-family: sans-serif;}
+*{margin: 5px; padding: 0;}
+body{background-image: url("bg.jpg");
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 600px; /* You must set a specified height */
+    /* background-position: center;  */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    font-family: sans-serif;
+}
         
 .form-wrap{ width: 320px; background: #c28d8d; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
 h1{text-align: center; color: rgb(68, 10, 107); font-weight: normal; margin-bottom: 20px;}
@@ -9,6 +16,72 @@ input{width: 100%; background: none; border: 1px solid rgb(44, 18, 104); border-
         
 input[type="submit"]{ background: #88f07b; border: 0; cursor: pointer; color: #3f1379;}
 input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
-        
+.button
+{
+  position: relative;
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  font-size: 10px;
+  color: #15f4ee;
+  font-family: poppins;
+  font-weight: 400;
+  border: 5px solid #15f4ee;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 1.5s;
+    background-color: black;
+}
+
+.button:hover
+{
+  box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+              0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+  text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;            
+}
+.musician{
+    position: relative;
+    left: 25%;
+}
+.song{
+    position: relative;
+    left: 35%;
+}
+.album{
+    position: relative;
+    left: 42%; 
+}
+.report{
+    position: relative;
+    left: 35%; 
+}
+hr.rounded {
+    border-top: 8px solid rgb(17, 14, 241);
+    border-radius: 30px;
+    
+  }    
+.h3{
+      position: relative;
+      left: 50%;
+
+  } 
+  .glow {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
 ::placeholder{color: rgb(35, 9, 104);}
     
