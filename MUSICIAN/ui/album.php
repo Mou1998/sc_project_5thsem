@@ -21,7 +21,7 @@ $check_c="SELECT * from albums WHERE (A_Name='$a_name' and Copyright_Date='$copy
     ?>
         <script type="text/javascript"> 
 	        alert('Album is already exist,Please try another one!'); 
-	        window.location.href = "album.html";
+	        window.location.href = "index.html";
         </script>;
     <?php
     }
@@ -33,7 +33,7 @@ mysqli_query($dbcon,$savealbum);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	    window.location.href = "album.html";
+	    window.location.href = "index.html";
     </script>;
 <?php				
 

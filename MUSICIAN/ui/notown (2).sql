@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2021 at 07:57 PM
+-- Generation Time: Apr 15, 2021 at 08:06 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -44,6 +44,7 @@ INSERT INTO `addresses` (`Ph_No`, `FullAddress`) VALUES
 ('1234556789', '45, Golpark'),
 ('1234567890', '9, Murshidabad'),
 ('3698521470', '34, Midnapore'),
+('4563289710', '91, C.I.T Road'),
 ('9856321000', '787, Belur'),
 ('9856321470', '31, Rasbehari Avenew'),
 ('9874563210', '78, Belur'),
@@ -73,7 +74,8 @@ INSERT INTO `albums` (`A_Id`, `A_Name`, `Copyright_Date`, `Format`, `Ssn`) VALUE
 (1, 'Tomar songe', '2016-08-10', 'CD', 6),
 (2, 'Nibehon', '2018-09-25', 'CD', 6),
 (3, 'Aladin', '2019-06-12', 'MC', 2),
-(4, 'Aladin', '2018-09-25', 'MC', 2);
+(4, 'Aladin', '2018-09-25', 'MC', 2),
+(5, 'Kedarnath', '2019-07-25', 'MC', 1);
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,7 @@ INSERT INTO `musicians` (`Ssn`, `Name`, `Ph_No`, `Existance`) VALUES
 (7, 'Shovan Ganguly', '9874563210', 'Exist'),
 (8, 'Iman Chakraborty', '9856321000', 'Exist'),
 (9, 'Kaushiki Chakraborty', '9956321000', 'Exist'),
-(10, 'Kabita Roy', '9955521000', 'Exist'),
+(10, 'Kabita Krisnamurti', '4563289710', 'Exist'),
 (11, 'Kushal Deb', '3698521470', 'Exist'),
 (12, 'Kush Deb', '3698521470', 'Exist'),
 (13, 'Kiran Bedi', '1234556789', 'Not_Exist'),
@@ -137,8 +139,10 @@ CREATE TABLE `performs` (
 --
 
 INSERT INTO `performs` (`Ssn`, `Title`) VALUES
+(1, 'Qaafiyana'),
 (4, 'Mono moro meghero songi'),
 (5, 'Mono moro meghero songi'),
+(7, 'Qaafiyana'),
 (8, 'Mono moro meghero songi');
 
 -- --------------------------------------------------------
@@ -171,7 +175,8 @@ CREATE TABLE `songs` (
 INSERT INTO `songs` (`Title`, `Author`, `A_Id`) VALUES
 ('Modhuro Bosonto', 'Rabindranath Tagore', 2),
 ('Mono moro meghero songi', 'Rabindranath Tagore', 2),
-('purano sei diner kotha', 'Rabindranath Tagore', 2);
+('purano sei diner kotha', 'Rabindranath Tagore', 2),
+('Qaafiyana', 'Amitav Bhattacharyaa', 5);
 
 --
 -- Indexes for dumped tables
@@ -232,13 +237,13 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `A_Id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `A_Id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `musicians`
 --
 ALTER TABLE `musicians`
-  MODIFY `Ssn` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `Ssn` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
