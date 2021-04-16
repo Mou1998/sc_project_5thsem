@@ -4,6 +4,8 @@ session_start();
 
 <?php
 include("dbcon.php");
+if(isset($_POST['report']))
+{
 ?>
 <!DOCTYPE html>
 <html>
@@ -109,3 +111,6 @@ include("dbcon.php");
   position: static;
 }
 </style>
+<?php
+}
+?>
