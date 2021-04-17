@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2021 at 04:20 PM
+-- Generation Time: Apr 17, 2021 at 08:38 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `artgallery`
+-- Database: `artbase`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,13 @@ CREATE TABLE `artists` (
   `address` text COLLATE utf8_unicode_ci NOT NULL,
   `style_of_art` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `artists`
+--
+
+INSERT INTO `artists` (`name`, `age`, `address`, `style_of_art`) VALUES
+('Sunil Roy', 32, '76, A.K.Lane', 'Fine Art');
 
 -- --------------------------------------------------------
 
