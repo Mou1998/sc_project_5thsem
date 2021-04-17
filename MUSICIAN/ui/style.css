@@ -54,7 +54,7 @@ input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
 }
 .report{
     position: relative;
-    left: 35%; 
+    left: 42%; 
 }
 hr.rounded {
     border-top: 8px solid rgb(17, 14, 241);
@@ -84,5 +84,6 @@ hr.rounded {
       text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
     }
   }
+
 ::placeholder{color: rgb(7, 7, 7); font-size: 20px;font-weight: bold;}
     

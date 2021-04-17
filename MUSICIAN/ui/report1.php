@@ -13,7 +13,7 @@ include("dbcon.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
-    <link href="style.css" rel="stylesheet" />
+    <link href="style2.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -35,7 +35,7 @@ include("dbcon.php");
         ]);
 
         var options = {
-          title: 'Producers produces their albums <?php echo $form_date; ?> to <?php echo $to_date; ?>'
+          title:'Producers produces their albums <?php echo $form_date; ?> to <?php echo $to_date; ?>'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -45,29 +45,26 @@ include("dbcon.php");
     </script>
 </head>
 <body>
-	<div class="col-md-3">
+	<div class="form-wrap">
             
         <form role="form" method="POST" action="report1.php">
     
-            <h1>Album Record</h1>
             <input type="date" placeholder="form_date" name="form_date" required>
             <input type="date" placeholder="to_date" name="to_date" required>
             
 
-            <input type="submit" class="btn btn-md btn-warning btn-block" name="genarate" value="Genarate">
+            <input type="submit" class="button-generate" name="genarate" value="Genarate">
 		</form>
     </div>
     <?php
     	if (isset($_POST['genarate'])) {?>
     		<div id="page-wrapper">
-    			<div class="alert alert-default" style="color:white;background-color:#008CBA">
-	                <center>
-	                    <h3> <span class="glyphicon glyphicon-list-alt"></span> report of Albums from <?php $newDate = date("d-m-Y", strtotime($form_date));  echo $newDate; ?>
+    			<div>
+	                    <h3 class="heading">  Report of Albums from <?php $newDate = date("d-m-Y", strtotime($form_date));  echo $newDate; ?>
 	                    to <?php $newDate = date("d-m-Y", strtotime($to_date));  echo $newDate; ?> </h3>
-	                </center>
 	            </div><br />
 	    		<div class="table-responsive">
-	                <table class="display table table-bordered" id="example" cellspacing="0" width="100%">
+	                <table class="content-table" id="example">
 	                    <thead>
 	                        <tr>
 	                            <th>PID</th>
@@ -99,14 +96,16 @@ include("dbcon.php");
             	</div>
             </div>
             <br>
+			<section class="chart">
     		<div id="piechart"></div>
+			</section>
     		<br>
+			<a href="index.html">go to home</a>
 </body>
 </html>
 <style>
 .split {
   height: 100%;
   width: 50%;
-  position: static;
 }
 </style>
