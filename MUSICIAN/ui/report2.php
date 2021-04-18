@@ -12,7 +12,7 @@ include("dbcon.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
-    <link href="style2.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -44,16 +44,16 @@ include("dbcon.php");
     </script>
 </head>
 <body>
-  
-	<div class="form-wrap">
+	<div class="col-md-3">
             
         <form role="form" method="POST" action="report2.php">
     
+            <h1>Album Record</h1>
             <input type="date" placeholder="form_date" name="form_date" required>
             <input type="date" placeholder="to_date" name="to_date" required>
             
 
-            <input type="submit" class="button-generate" name="genarate" value="Genarate">
+            <input type="submit" class="btn btn-md btn-warning btn-block" name="genarate" value="Genarate">
 		</form>
     </div>
     <?php
@@ -66,7 +66,7 @@ include("dbcon.php");
 	                </center>
 	            </div><br />
 	    		<div class="table-responsive">
-	                <table class="content-table" id="example">
+	                <table class="display table table-bordered" id="example" cellspacing="0" width="100%">
 	                    <thead>
 	                        <tr>
 	                            <th>Instrument Name</th>
@@ -75,15 +75,7 @@ include("dbcon.php");
 	                    </thead>
 	                    <tbody>
 	                                <?php
-<<<<<<< Updated upstream
-	                                $sql = "SELECT DiSTINCT(Ins_Name), title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
-=======
-<<<<<<< HEAD
 	                                $sql = "SELECT DISTINCT Ins_Name, title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `Ins_Name` ASC" ;
-=======
-	                                $sql = "SELECT DiSTINCT(Ins_Name), title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
->>>>>>> 0519c0244762fd55781c3e9d426586bb1ca88a60
->>>>>>> Stashed changes
 	          						$fire = mysqli_query($dbcon,$sql);
 	          						while ($result = mysqli_fetch_assoc($fire)){
 	                                ?>
@@ -104,8 +96,6 @@ include("dbcon.php");
             <br>
     		<div id="piechart"></div>
     		<br>
-        <br>
-			<a href="index.html">go to home</a>
 </body>
 </html>
 <style>
