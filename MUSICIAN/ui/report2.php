@@ -12,7 +12,11 @@ include("dbcon.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
+<<<<<<< Updated upstream
     <link href="style.css" rel="stylesheet" />
+=======
+    <link href="style2.css" rel="stylesheet" />
+>>>>>>> Stashed changes
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -44,16 +48,28 @@ include("dbcon.php");
     </script>
 </head>
 <body>
+<<<<<<< Updated upstream
 	<div class="col-md-3">
             
         <form role="form" method="POST" action="report2.php">
     
             <h1>Album Record</h1>
+=======
+  
+	<div class="form-wrap">
+            
+        <form role="form" method="POST" action="report2.php">
+    
+>>>>>>> Stashed changes
             <input type="date" placeholder="form_date" name="form_date" required>
             <input type="date" placeholder="to_date" name="to_date" required>
             
 
+<<<<<<< Updated upstream
             <input type="submit" class="btn btn-md btn-warning btn-block" name="genarate" value="Genarate">
+=======
+            <input type="submit" class="button-generate" name="genarate" value="Genarate">
+>>>>>>> Stashed changes
 		</form>
     </div>
     <?php
@@ -66,7 +82,11 @@ include("dbcon.php");
 	                </center>
 	            </div><br />
 	    		<div class="table-responsive">
+<<<<<<< Updated upstream
 	                <table class="display table table-bordered" id="example" cellspacing="0" width="100%">
+=======
+	                <table class="content-table" id="example">
+>>>>>>> Stashed changes
 	                    <thead>
 	                        <tr>
 	                            <th>Instrument Name</th>
@@ -96,6 +116,11 @@ include("dbcon.php");
             <br>
     		<div id="piechart"></div>
     		<br>
+<<<<<<< Updated upstream
+=======
+        <br>
+			<a href="index.html">go to home</a>
+>>>>>>> Stashed changes
 </body>
 </html>
 <style>
