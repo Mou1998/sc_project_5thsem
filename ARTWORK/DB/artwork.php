@@ -26,6 +26,7 @@ $run_query=mysqli_query($dbcon,$check_c);
         window.location.href = "index.html";
         </script>;
     <?php
+    exit();
     }
 $check_c="select * from artists WHERE name= '$a_name' and Existance='Exist' ";
 $run_query=mysqli_query($dbcon,$check_c);
@@ -38,6 +39,7 @@ $run_query=mysqli_query($dbcon,$check_c);
         window.location.href = "index.html";
         </script>;
     <?php
+    exit();
     }
 $addart="INSERT INTO artwork (title,type,year_of_made,price,a_name) VALUE ('$title','$type','$year','$price','$a_name')";
 mysqli_query($dbcon,$addart);
@@ -66,7 +68,7 @@ foreach ($group_array as $value)
 }
 
 
-// musician edit
+// artwork edit
 if(isset($_POST['edit']))
 {
 $title = $_POST['title'];
@@ -85,6 +87,7 @@ $run_query=mysqli_query($dbcon,$check_c);
         window.location.href = "index.html";
         </script>;
     <?php
+    exit();
     }
     $editart="UPDATE artwork SET price='$price'";
     mysqli_query($dbcon,$editart);

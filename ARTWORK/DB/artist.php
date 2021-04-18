@@ -23,6 +23,7 @@ if(mysqli_num_rows($run_query)>0)
         window.location.href = "index.html";
     </script>;
 <?php
+exit();
 }
 
 $saveartist="INSERT into artists (name,dob,address,style_of_art) VALUES ('$a_name','$dob','$address','$style')";
@@ -53,6 +54,7 @@ if(mysqli_num_rows($run_query)<1)
         window.location.href = "index.html";
     </script>;
 <?php
+exit();
 }
 
 $editartist="UPDATE artists SET address = '$address' WHERE name='$a_name'";
@@ -66,6 +68,8 @@ mysqli_query($dbcon,$editartist);
 <?php				
 
 }
+
+//artist delete
 
 if(isset($_POST['delete']))
 {
@@ -81,6 +85,7 @@ if(mysqli_num_rows($run_query)<1)
         window.location.href = "index.html";
     </script>;
 <?php
+exit();
 }
 
 $deleteartist="UPDATE artists SET Existance='Not_Exist' WHERE name='$a_name'";

@@ -26,6 +26,7 @@ if(isset($_POST['add']))
 	        window.location.href = "index.html";
 	        </script>;
 	    <?php
+		exit();
 	    }
 	$songadd="INSERT into songs (Title,Author,A_Id) VALUES ('$title','$author','$album')";
 	mysqli_query($dbcon,$songadd);
@@ -72,6 +73,7 @@ if(isset($_POST['edit']))
 	        window.location.href = "index.html";
 	        </script>;
 	    <?php
+		exit();
 	    }
 	
 

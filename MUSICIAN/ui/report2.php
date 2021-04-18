@@ -75,7 +75,7 @@ include("dbcon.php");
 	                    </thead>
 	                    <tbody>
 	                                <?php
-	                                $sql = "SELECT Ins_Name, title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
+	                                $sql = "SELECT DiSTINCT(Ins_Name), title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
 	          						$fire = mysqli_query($dbcon,$sql);
 	          						while ($result = mysqli_fetch_assoc($fire)){
 	                                ?>

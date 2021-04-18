@@ -24,6 +24,7 @@ $check_c="SELECT * from albums WHERE (A_Name='$a_name' and Copyright_Date='$copy
 	        window.location.href = "index.html";
         </script>;
     <?php
+    exit();
     }
 
 $savealbum="INSERT into albums (A_Name,Copyright_Date,Format,Ssn) VALUES ('$a_name','$copyright','$format','$producer')";

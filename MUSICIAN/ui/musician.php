@@ -20,10 +20,11 @@ $run_query=mysqli_query($dbcon,$check_c);
     {
     ?>
         <script type="text/javascript"> 
-        alert('Data successfully saved'); 
+        alert('Wrong input , please try again!'); 
         window.location.href = "index.html";
         </script>;
     <?php
+    exit();
     }
 $check_a="select * from addresses WHERE (Ph_No='$m_ph' and FullAddress='$m_add') ";
 $run_query=mysqli_query($dbcon,$check_a);
@@ -97,6 +98,7 @@ if(isset($_POST['edit']))
                 window.location.href = "index.html";
             </script>;
         <?php
+        exit();
         }
     $check_c="select * from addresses WHERE (Ph_No='$m_ph' and not FullAddress='$m_add') or (not Ph_No='$m_ph' and FullAddress='$m_add') ";
     $run_query=mysqli_query($dbcon,$check_c);
@@ -111,6 +113,7 @@ if(isset($_POST['edit']))
                 window.location.href = "index.html";
             </script>;
         <?php
+        exit();
         }
     
     $check_a="select * from addresses WHERE (Ph_No='$m_ph' and FullAddress='$m_add') ";
@@ -149,6 +152,7 @@ if(isset($_POST['delete']))
                 window.location.href = "index.html";
             </script>;
         <?php
+        exit();
         }
     }
     $savemusician="UPDATE musicians set Existance = 'Not_Exist' where Ssn='$m_id' ";
