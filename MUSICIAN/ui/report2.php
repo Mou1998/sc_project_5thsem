@@ -25,10 +25,10 @@ include("dbcon.php");
          <?php
           $form_date=$_POST['form_date'];
           $to_date=$_POST['to_date'];
-          $sql="SELECT Ins_Name, COUNT(title) FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) GROUP by p.Ins_name";
+          $sql="SELECT Ins_Name, COUNT(DISTINCT title) FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) GROUP by p.Ins_name";
           $fire = mysqli_query($dbcon,$sql);
           while ($result = mysqli_fetch_assoc($fire)) {
-            echo"['".$result['Ins_Name']."',".$result['COUNT(title)']."],";
+            echo"['".$result['Ins_Name']."',".$result['COUNT(DISTINCT title)']."],";
           }
          ?>
         ]);
@@ -75,7 +75,15 @@ include("dbcon.php");
 	                    </thead>
 	                    <tbody>
 	                                <?php
+<<<<<<< Updated upstream
 	                                $sql = "SELECT DiSTINCT(Ins_Name), title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
+=======
+<<<<<<< HEAD
+	                                $sql = "SELECT DISTINCT Ins_Name, title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `Ins_Name` ASC" ;
+=======
+	                                $sql = "SELECT DiSTINCT(Ins_Name), title FROM plays p, performs per where p".".Ssn=per.Ssn and per.Title IN( SELECT title FROM songs WHERE A_Id IN( SELECT A_Id FROM albums WHERE Copyright_Date BETWEEN '$form_date' AND '$to_date')) ORDER BY `title` ASC" ;
+>>>>>>> 0519c0244762fd55781c3e9d426586bb1ca88a60
+>>>>>>> Stashed changes
 	          						$fire = mysqli_query($dbcon,$sql);
 	          						while ($result = mysqli_fetch_assoc($fire)){
 	                                ?>
