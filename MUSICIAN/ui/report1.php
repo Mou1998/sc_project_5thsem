@@ -45,19 +45,8 @@ include("dbcon.php");
     </script>
 </head>
 <body>
-	<div class="form-wrap">
-            
-        <form role="form" method="POST" action="report1.php">
-    
-            <input type="date" placeholder="form_date" name="form_date" required>
-            <input type="date" placeholder="to_date" name="to_date" required>
-            
-
-            <input type="submit" class="button-generate" name="genarate" value="Genarate">
-		</form>
-    </div>
-
-	
+<div class="row">
+<div class="col-md-6">
     <?php
     	if (isset($_POST['genarate'])) {?>
     		<div id="page-wrapper">
@@ -97,12 +86,27 @@ include("dbcon.php");
 	                </table>
             	</div>
             </div>
-            <br>
+	</div>
+	</div>
+			<br>
 			<section class="chart">
     		<div id="piechart"></div>
 			</section>
     		<br>
 			<a href="index.html">go to home</a>
+
+			<div class="form-wrap">
+            
+        <form role="form" method="POST" action="report1.php">
+    
+            <input type="date" placeholder="form_date" name="form_date" required>
+            <input type="date" placeholder="to_date" name="to_date" required>
+            
+
+            <input type="submit" class="button-generate" name="genarate" value="Genarate">
+		</form>
+    </div>
+           
 </body>
 </html>
 <style>
