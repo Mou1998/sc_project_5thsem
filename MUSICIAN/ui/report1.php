@@ -56,6 +56,8 @@ include("dbcon.php");
             <input type="submit" class="button-generate" name="genarate" value="Genarate">
 		</form>
     </div>
+
+	
     <?php
     	if (isset($_POST['genarate'])) {?>
     		<div id="page-wrapper">
@@ -70,7 +72,7 @@ include("dbcon.php");
 	                            <th>PID</th>
 	                            <th>P_Name</th>
 	                            <th>Album_Name</th>
-	                            <th>Copy Right Date</th>
+	                            <th>Copyright Date</th>
 	                        </tr>
 	                    </thead>
 	                    <tbody>
