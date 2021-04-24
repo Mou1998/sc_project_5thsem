@@ -60,25 +60,25 @@ h1 {
 
 input {
     width: 100%;
-    background: none;
+    background: rgb(195, 245, 129);;
     border: 3px solid rgb(84, 223, 119);
     border-radius: 3px;
     padding: 6px 15px;
     box-sizing: border-box;
     margin-bottom: 20px;
     font-size: 16px;
-    color: rgb(255, 255, 255);
+   
 }
 
 input[type="submit"] {
-    background: #88f07b;
+    background: #208102;
     border: 0;
     cursor: pointer;
-    color: #fcfcfc;
+   
 }
 
 input[type="submit"]:hover {
-    background: #4fe693;
+    background: #083103;
     transition: .6s;
 }
 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'nav.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,26 +9,26 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Musician</title>
-        <link href="style.css" rel="stylesheet" />
+        <link href="style2.css" rel="stylesheet" />
     </head>
 
     <body>
     
-        <div class="form-wrap">
+        <div class="form-wrap2">
             <?php
             if(isset($_POST["add"]))
             {
             ?>
                 <form role="form" method="POST" action="musician.php">
             
-                    <h1>Musician Record</h1>
-                    <input type="text" placeholder="Musician Full Name" name="m_name" required>
-                    <input type="number" placeholder="Phone Number" name="ph" required>
-                    <input type="text" placeholder="Full Address" name="address" required>
-                    <input type="text" placeholder="Instruments plays" name="instrument" required>
+                <label for="formGroupExampleInput" class="form-label">Musician Record</label>
+                    <input type="text" class="form-control" placeholder="Musician Full Name" name="m_name" required>
+                    <input type="number" class="form-control" placeholder="Phone Number" name="ph" required>
+                    <input type="text" class="form-control" placeholder="Full Address" name="address" required>
+                    <input type="text" class="form-control" placeholder="Instruments plays" name="instrument" required>
 
 
-                    <input type="submit" class="btn btn-md btn-warning btn-block" name="add" value="Add+">
+                    <input type="submit" class="button-generate" name="add" value="ADD NOW">
 
                 </form>
                         
@@ -42,13 +42,13 @@ session_start();
                 <form role="form" method="POST" action="musician.php">
                         
                     <h1>Musician Record</h1>
-                    <input type="number" placeholder="Musician ID" name="m_id" required>
-                    <input type="text" placeholder="Musician Full Name" name="m_name" required>
-                    <input type="number" placeholder="Phone Number" name="ph" required>
-                    <input type="text" placeholder="Full Address" name="address" required>
+                    <input type="number" class="form-control" placeholder="Musician ID" name="m_id" required>
+                    <input type="text" class="form-control" placeholder="Musician Full Name" name="m_name" required>
+                    <input type="number" class="form-control" placeholder="Phone Number" name="ph" required>
+                    <input type="text" class="form-control" placeholder="Full Address" name="address" required>
 
 
-                    <input type="submit" class="btn btn-md btn-warning btn-block" name="edit" value="Edit">
+                    <input type="submit" class="button-generate" name="edit" value="UPDATE">
                 </form>
             <?php
             }
@@ -58,9 +58,9 @@ session_start();
                 <form role="form" method="POST" action="musician.php">
                         
                     <h1>Musician Record</h1>
-                    <input type="number" placeholder="Musician ID" name="m_id" required>
+                    <input type="number" class="form-control" placeholder="Musician ID" name="m_id" required>
                     
-                    <input type="submit" class="btn btn-md btn-warning btn-block" name="delete" value="Delete --">
+                    <input type="submit" class="button-generate" name="delete" value="DELETE">
                 </form>
                         
             <?php
@@ -69,3 +69,6 @@ session_start();
         </div>
     </body>
 </html>
+<?php
+include 'function.php';
+?>

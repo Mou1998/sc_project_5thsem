@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'nav.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,12 +10,12 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Song</title>
-        <link href="style.css" rel="stylesheet" />
+        <link href="style2.css" rel="stylesheet" />
     </head>
 
     <body>
     
-        <div class="form-wrap">
+        <div class="form-wrap2">
 
             <?php
             if(isset($_POST["add"]))
@@ -26,12 +26,12 @@ session_start();
             
                     <h1>Song Record</h1>
                 
-                    <input type="text" placeholder="Song Title" name="title" required>
-                    <input type="text" placeholder="Author" name="author" required>
-                    <input type="number" placeholder="Album ID" name="album" required>
-                    <input type="text" placeholder="Musician SSN" name="ssn" required>
+                    <input type="text" class="form-control" placeholder="Song Title" name="title" required>
+                    <input type="text" class="form-control" placeholder="Author" name="author" required>
+                    <input type="number" class="form-control" placeholder="Album ID" name="album" required>
+                    <input type="text" class="form-control" placeholder="Musician SSN" name="ssn" required>
 
-                    <input type="submit" class="btn btn-md btn-warning btn-block" name="add" value="Add+">
+                    <input type="submit" class="button-generate" name="add" value="ADD NOW">
 
                 </form>
                 <?php
@@ -43,10 +43,10 @@ session_start();
             
                     <h1>Song Record</h1>
         
-                    <input type="text" placeholder="Song Title" name="title" required>  
-                    <input type="text" placeholder=" Add Musician SSN" name="ssn" required>
+                    <input type="text" class="form-control" placeholder="Song Title" name="title" required>  
+                    <input type="text" class="form-control" placeholder=" Add Musician SSN" name="ssn" required>
 
-                    <input type="submit" class="btn btn-md btn-warning btn-block" name="edit" value="Edit+">
+                    <input type="submit" class="button-generate" name="edit" value="UPDATE">
 
                 </form>
                 <?php
@@ -58,3 +58,6 @@ session_start();
     </body>
     
 </html>
+<?php
+include 'function.php';
+?>

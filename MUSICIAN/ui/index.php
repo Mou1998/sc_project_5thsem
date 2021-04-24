@@ -1,3 +1,26 @@
+<?php session_start(); /* Starts the session */
+/* Check Login form submitted */
+if(isset($_POST['Submit'])){
+/* Define username and associated password array */
+$logins = array('Alex' => '123456','admin' => 'admin','123' => '123');
+
+/* Check and assign submitted Username and Password to new variable */
+$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
+$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+
+/* Check Username and Password existence in defined array */
+if (isset($logins[$Username]) && $logins[$Username] == $Password){
+/* Success: Set session variables and redirect to Protected page  */
+$_SESSION['UserData']['Username']=$logins[$Username];
+header("location:dashboard.php");
+exit;
+} else {
+/*Unsuccessful attempt: Set error message */
+$msg="<span style='color:red'>Invalid Login Details</span>";
+}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +59,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-8">
-                            <h1>General Form</h1>
+                            <h1>Please Login First</h1>
                         </div>
                     </div>
                 </div>
@@ -51,29 +74,46 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Quick Example</h3>
+                                <h3 class="card-title">Album Management System</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form">
+
+
+
+
+                            <form role="form" action="" method="post" name="Login_Form">
+                                <table width="400" border="0" align="center" cellpadding="5" cellspacing="1"
+                                    class="Table">
+                                    <?php if(isset($msg)){?>
+                                    <tr>
+                                        <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
+                                    </tr>
+                                    <?php } ?>
+                                </table>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <input name="Username" type="text" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <input name="Password" type="password" class="form-control"
+                                            id="exampleInputPassword1" placeholder="Password">
                                     </div>
 
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-info">Sign in</button>
-                                    <button type="submit" class="btn btn-default float-right">Cancel</button>
+                                    <button name="Submit" type="submit" value="Login" class="btn btn-info">Log
+                                        in</button>
+                                    <button type="Submit" class="btn btn-default float-right">Cancel</button>
                                 </div>
                             </form>
+
+
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ $run_query=mysqli_query($dbcon,$check_c);
     ?>
         <script type="text/javascript"> 
         alert('Wrong input , please try again!'); 
-        window.location.href = "index.html";
+        window.location.href = "dashboard.php";
         </script>;
     <?php
     exit();
@@ -70,7 +70,7 @@ foreach ($ins_array as $value)
 ?>
 <script type="text/javascript"> 
         alert('Data successfully saved'); 
-        window.location.href = "index.html";
+        window.location.href = "dashboard.php";
 </script>;
 <?php
 
@@ -95,7 +95,7 @@ if(isset($_POST['edit']))
         ?>
             <script type="text/javascript"> 
                 alert("Musician doesn't exist"); 
-                window.location.href = "index.html";
+                window.location.href = "dashboard.php";
             </script>;
         <?php
         exit();
@@ -110,7 +110,7 @@ if(isset($_POST['edit']))
         ?>
             <script type="text/javascript"> 
                 alert("There may be wrong information,Please try again!"); 
-                window.location.href = "index.html";
+                window.location.href = "dashboard.php";
             </script>;
         <?php
         exit();
@@ -130,7 +130,7 @@ if(isset($_POST['edit']))
 ?>
     <script type="text/javascript"> 
         alert("successfully Update"); 
-        window.location.href = "index.html";
+        window.location.href = "dashboard.php";
     </script>;
 <?php
 
@@ -149,7 +149,7 @@ if(isset($_POST['delete']))
         ?>
             <script type="text/javascript"> 
                 alert("Musician already doesn't exist"); 
-                window.location.href = "index.html";
+                window.location.href = "dashboard.php";
             </script>;
         <?php
         exit();
@@ -159,7 +159,7 @@ if(isset($_POST['delete']))
     mysqli_query($dbcon,$savemusician);?>
     <script type="text/javascript"> 
         alert("Musician's existance removed\!"); 
-        window.location.href = "index.html";
+        window.location.href = "dashboard.php";
     </script>;
 <?php
 }

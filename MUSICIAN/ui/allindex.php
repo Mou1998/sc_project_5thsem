@@ -1,6 +1,10 @@
+<?php 
+include 'nav.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +30,7 @@
     </form>
     <!-- <hr class="rounded"> -->
     <br>
-    <form action="album.html" method="POST">
+    <form action="albumfrm.php" method="POST">
       <h3 class="sub-heading">ALBUM DETAILS</h3>
       <section class="album">
         <button class="button" name="add" type="submit">Add Album</button>
@@ -54,11 +58,14 @@
       <form action="report2.php" method="POST">
         <button class="button" type="submit">Generate Report2</button>
       </form>
-      <br><br>
-      <button class="button" type="submit">LOG OUT</button>
+      <br>
+      <a href="logout.php" class="btn btn-dark btn-lg" role="button" data-bs-toggle="button">Log Out</a>
+      <hr>
     </section>
+    
+
   </div>
 
-</body>
-
-</html>
+<?php
+include 'function.php';
+?>

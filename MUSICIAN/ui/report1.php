@@ -60,6 +60,7 @@ include("dbcon.php");
 					
 					<div class="form-wrap">
 						<form role="form" method="POST" action="report1.php">
+						<label for="formGroupExampleInput" class="form-label">Album Record</label>
 							<input type="date" placeholder="form_date" name="form_date" required>
 							<input type="date" placeholder="to_date" name="to_date" required>
 							<input type="submit" class="button-generate" name="genarate" value="Genarate">
@@ -116,7 +117,7 @@ else { ?>
 					<input type="submit" class="button-generate" name="genarate" value="Genarate">
 				</form>
 			</div>
-			<a href="index.html" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
+			<a href="dashboard.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
 
 									
 			
