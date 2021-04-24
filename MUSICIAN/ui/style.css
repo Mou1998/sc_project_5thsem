@@ -1,90 +1,145 @@
-
-*{margin: 0px; padding: 0;}
-body{
-    background-image: url("bg.jpg");
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 600px; /* You must set a specified height */
-    /* background-position: center;  */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-    font-family: sans-serif;
-}
-        
-.form-wrap{ width: 320px; background: transparent; padding: 40px 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-h1{text-align: center; color: rgb(247, 243, 250); font-weight: normal; margin-bottom: 20px;}
-        
-input{width: 100%; background: none; border: 3px solid rgb(84, 223, 119); border-radius: 3px; padding: 6px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: rgb(255, 255, 255);}
-        
-input[type="submit"]{ background: #88f07b; border: 0; cursor: pointer; color: #fcfcfc;}
-input[type="submit"]:hover{ background: #4fe693; transition: .6s;}
-.button
-{
-  position: relative;
-  text-align: center;
-  width: 200px;
-  padding: 20px;
-  font-size: 14px;
-  color: #f8f8f8;
-  font-family: poppins;
-  font-weight: 1000;
-  border: 5px solid #15f4ee;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 100px;
-  transition: 0.1s;
-  background-color: transparent;
-}
-
-.button:hover
-{
-  box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
-              0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
-  text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;            
-}
-.musician{
-    position: relative;
-    left: 25%;
-}
-.song{
-    position: relative;
-    left: 35%;
-}
-.album{
-    position: relative;
-    left: 42%; 
-}
-.report{
-    position: relative;
-    left: 42%; 
-}
-hr.rounded {
-    border-top: 8px solid rgb(17, 14, 241);
-    border-radius: 30px;
-    
-  }    
-/* .h3{
-      position: relative;
-      left: 50%;
-
-  }  */
-  .glow {
-    padding: 10px;
-    font-size: 40px;
-    color: #fff;
-    text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+*{
+    margin: 0px; 
+    padding: 0;
+  }
+  body{
+      background-image: url("bg.jpg");
+      background-color: #0A0420; /* Used if the image is unavailable */
+      height: 600px; /* You must set a specified height */
+      /* background-position: center;  */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: 100vw;
+      font-family: 'Noto Sans', sans-serif;
   }
   
-  @-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
+  .bg-cover {
+    background-color: rgba(0,0,0,0.75);
   }
-
-::placeholder{color: rgb(7, 7, 7); font-size: 20px;font-weight: bold;}
+          
+  .form-wrap { 
+    width: 320px; 
+    background: transparent; 
+    padding: 40px 20px; 
+    box-sizing: border-box; 
+    position: fixed; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+  }
+  h1{
+    text-align: center; 
+    color: rgb(247, 243, 250); 
+    font-weight: 700; 
+    margin-bottom: 20px;}
+          
+  input{
+    width: 100%; 
+    background: none; 
+    border: 3px solid rgb(84, 223, 119); 
+    border-radius: 3px; 
+    padding: 6px 15px; 
+    box-sizing: border-box; 
+    margin-bottom: 20px; 
+    font-size: 16px; 
+    color: rgb(255, 255, 255);
+  }
+          
+  input[type="submit"] { 
+    background: #88f07b; 
+    border: 0; 
+    cursor: pointer; 
+    color: #fcfcfc;
+  }
+  input[type="submit"]:hover{ 
+    background: #4fe693; 
+    transition: .6s;
+  }
+  .button
+  {
+      text-align: center;
+      width: 200px;
+      padding: 16px;
+      font-size: 14px;
+      color: #e60073;
+      border: 2px solid #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 100px;
+      transition: 0.3s;
+      background-color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+  }
+  
+  .button:hover
+  {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #e60073;          
+  }
+  .musician{
+      display: block;
+      text-align: center;
+  }
+  .song{
+    display: block;
+    text-align: center;
+  }
+  .album{
+    display: block;
+    text-align: center; 
+  }
+  .report{
+    display: block;
+    text-align: center;
+  }
+  hr.rounded {
+      border-top: 8px solid rgb(17, 14, 241);
+      border-radius: 30px;
+      
+    }    
+  
+  .heading {
+    color: #e60073;
+    padding: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .sub-heading {
+    color: #e60073;
+    padding: 1rem;
+    font-size: 1.75rem;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+  /* .h3{
+        position: relative;
+        left: 50%;
+  
+    }  */
+    /* .glow {
+      padding: 10px;
+      font-size: 40px;
+      color: #fff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
     
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+  
+  ::placeholder{color: rgb(7, 7, 7); font-size: 20px;font-weight: bold;} */
+      
+  
