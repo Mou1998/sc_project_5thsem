@@ -20,7 +20,7 @@ if(mysqli_num_rows($run_query)>0)
 ?>
     <script type="text/javascript"> 
         alert('Artist is already exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     </script>;
 <?php
 exit();
@@ -32,7 +32,7 @@ mysqli_query($dbcon,$saveartist);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "index.php";
     </script>;
 <?php				
 
@@ -51,7 +51,7 @@ if(mysqli_num_rows($run_query)<1)
 ?>
     <script type="text/javascript"> 
         alert('Artist does not exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     </script>;
 <?php
 exit();
@@ -63,7 +63,7 @@ mysqli_query($dbcon,$editartist);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "index.php";
     </script>;
 <?php				
 
@@ -82,7 +82,7 @@ if(mysqli_num_rows($run_query)<1)
 ?>
     <script type="text/javascript"> 
         alert('Artist does not exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     </script>;
 <?php
 exit();
@@ -94,7 +94,7 @@ mysqli_query($dbcon,$deleteartist);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "index.php";
     </script>;
 <?php				
 

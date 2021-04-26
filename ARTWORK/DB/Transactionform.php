@@ -12,7 +12,7 @@ include("dbcon.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title><!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="style2.css" rel="stylesheet" />
+    <link href="style4.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="col-md-6">
@@ -45,11 +45,9 @@ include("dbcon.php");
 		</div>
 	</div>
 	<form role="form" method="POST" action="Transaction.php">
-		<label class="col-md-4 control-label"> Service Name:</label>
-	    <div class="col-md-4 selectContainer">
-			    <div class="input-group">
-			        <span class="input-group-addon"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></span>
-				    <select name="title" class="form-control selectpicker">
+		<div class="form-wrap">
+					<h3>Service Name:</h3>
+				    <select name="title">
 				      <option value="">--Select Artwork--</option>
 				      <?php $sql = "SELECT title FROM artwork WHERE txn_id IS NULL";
 							$result = mysqli_query($dbcon,$sql);
@@ -57,30 +55,14 @@ include("dbcon.php");
 				    			echo "<option value='" . $row["title"] . "'>" . $row["title"] . "</option>";
 							} ?>
 				    </select>
-			  </div>
-		</div>
-		<div class="col-md-4 selectContainer">
-			    <div class="input-group">
-			        <div class="form-group">
-					  <label class="col-md-8 control-label" >ID</label> 
-					    <div class="col-md-8 inputGroupContainer">
-						    <div class="input-group">
-							  <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
-							  <input name="c_id" placeholder="id" class="form-control"  type="number">
-						    </div>
-					  </div>
-					</div>
-			  </div>
-		</div>
-		<div class="form-group">
-		  <label class="col-md-6 control-label"></label>
-		  <div class="col-md-4"><br>
-		    	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAdd Transaction  <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
-		  </div>
+					<br>
+					<br>
+					<input name="c_id" placeholder="id" type="number">
+					<button type="submit" class="button"> Add Transaction</button>
 		</div>
 	</form>
 	</br>
 	<div>
-		
+	</div>	
 	</div>
 </body>
