@@ -23,7 +23,7 @@ $run_query=mysqli_query($dbcon,$check_c);
     ?>
         <script type="text/javascript"> 
         alert('Art already exist, Please try again!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
         </script>;
     <?php
     exit();
@@ -36,7 +36,7 @@ $run_query=mysqli_query($dbcon,$check_c);
     ?>
         <script type="text/javascript"> 
         alert('Artist does not exist, Please try again!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
         </script>;
     <?php
     exit();
@@ -61,7 +61,7 @@ foreach ($group_array as $value)
 ?>
 <script type="text/javascript"> 
         alert('Data successfully saved'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
 </script>;
 <?php
 
@@ -84,7 +84,7 @@ $run_query=mysqli_query($dbcon,$check_c);
     ?>
         <script type="text/javascript"> 
         alert('Art does not exist, Please try again!'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
         </script>;
     <?php
     exit();
@@ -116,7 +116,7 @@ $run_query=mysqli_query($dbcon,$check_c);
 ?>
 <script type="text/javascript"> 
         alert('Data successfully saved'); 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
 </script>;
 <?php
 
