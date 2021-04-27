@@ -88,7 +88,7 @@ include("dbcon.php");
 <?php
   if (isset($_POST['genarate'])) {?>
   
-    <div class="row">
+    <div>
         <h3 class="heading">  Report of ART Transaction from <?php $newDate = date("d-m-Y", strtotime($form_date));  echo $newDate; ?>
         to <?php $newDate = date("d-m-Y", strtotime($to_date));  echo $newDate; ?> </h3>
         
@@ -143,13 +143,11 @@ include("dbcon.php");
         </div>
     </div>
     <div class="row">
-      <div id="piechart" style="width: 1200px; height: 800px; bgcolour: transparent"></div>
-      <br>
-      <div id="dual_x_div" style="width: 900px; height: 500px; background-color: transparent"></div>
-      <br>
+      <div class="pie" id="piechart"></div>
+      <div class="bar" id="dual_x_div"></div>
+    </div>
       <a href="home.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
 <br><hr>
-    </div>
     
 <?php
 }

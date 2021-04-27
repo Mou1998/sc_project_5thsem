@@ -135,3 +135,26 @@ input[type="submit"]:hover {
 .content-table th {
     position: sticky;
 }
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    /* margin-left: 0px; */
+    min-width: 1000px;
+    
+}
+.row .pie{
+    height: 500px;
+    width: 400px;
+    /* position: relative;
+    margin-left: 70%; */
+}
+.row .bar{
+    /* width: 500px; */
+    height: 400px;
+    /* background: transparent;
+    background-color: transparent; */
+}
