@@ -145,9 +145,9 @@ include("dbcon.php");
     <div class="row">
       <div id="piechart" style="width: 1200px; height: 800px; bgcolour: transparent"></div>
       <br>
-      <div id="dual_x_div" style="width: 900px; height: 500px; bgcolour: transparent"></div>
+      <div id="dual_x_div" style="width: 900px; height: 500px; background-color: transparent"></div>
       <br>
-      <a href="index.html" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
+      <a href="home.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
 <br><hr>
     </div>
     
