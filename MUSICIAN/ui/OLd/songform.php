@@ -49,7 +49,7 @@ include 'nav.php';
                     <input type="submit" class="button-generate" name="edit" value="UPDATE">
 
                 </form>
-                <?php
+                <?php 
                 }
                 ?>
         

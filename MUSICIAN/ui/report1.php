@@ -1,15 +1,13 @@
 <?php
-session_start();
+include 'nav.php';
 ?>
+
 <?php
 include("dbcon.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title><!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="style2.css" rel="stylesheet" />
@@ -43,6 +41,139 @@ include("dbcon.php");
         chart.draw(data, options);
       }
     </script>
+	<style>
+body {
+   
+    background-image: url("bg2.jpg");
+    font-family: Source Sans Pro;
+}
+
+.button-generate {
+    background-color: #009879;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.heading {
+    font-family:  Source Sans Pro;
+    color: #009879;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    /* background-color: whitesmoke; */
+}
+
+.form-wrap {
+    width: 300px;
+    background: #009879;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 15rem;
+    margin-top: 3rem;
+
+}
+
+.form-wrap2 {
+    width: 300px;
+    background: #009879;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    margin-left: 35rem;
+    margin-top: 5rem;
+}
+
+h1 {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(247, 243, 250);
+    font-weight: normal;
+}
+
+input {
+    width: 100%;
+    background: rgb(195, 245, 129);;
+    border: 3px solid rgb(84, 223, 119);
+    border-radius: 3px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+   
+}
+
+input[type="submit"] {
+    background: #208102;
+    border: 0;
+    cursor: pointer;
+   
+}
+
+input[type="submit"]:hover {
+    background: #083103;
+    transition: .6s;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: green;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    overflow: auto;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #b9d2ee;
+}
+.content-table tbody tr:nth-of-type(odd) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.table-responsive {
+    width: 500px;
+    height: 500px;
+    overflow-y: auto;
+    align-content: right;
+    margin-left: 5rem;
+}
+
+.content-table th {
+    position: sticky;
+}
+    </style>
 </head>
 <body>
 <div class="container">
@@ -102,9 +233,10 @@ include("dbcon.php");
 		</div>
 		<div class="row">
 			<div id="piechart" style="width: 1200px; height: 800px; bgcolour: transparent"></div>
-			<br>
-			<a href="index.html" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
-<br><hr>
+		
+			<div class="col-md-12 text-center">
+        <a href="dashboard.php" class="btn btn-dark btn-lg" role="button" data-bs-toggle="button">Return to Home</a>
+        </div><br><hr>
 		</div>
 		
 <?php
@@ -116,9 +248,11 @@ else { ?>
 					<input type="date" placeholder="to_date" name="to_date" required>
 					<input type="submit" class="button-generate" name="genarate" value="Genarate">
 				</form>
-			</div>
-			<a href="dashboard.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
-
+			
+			<div class="col-md-12 text-center">
+        <a href="dashboard.php" class="btn btn-dark btn-lg" role="button" data-bs-toggle="button">Return to Home</a>
+        </div>
+		</div>
 									
 			
 			
@@ -127,8 +261,10 @@ else { ?>
 ?>
 
 
+
 		
 </div>
 	
-</body>
-</html>
+<?php
+include 'function.php';
+?>

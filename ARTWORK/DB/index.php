@@ -50,18 +50,21 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        <div class="content-wrapper">
+        
             <section class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-8">
-                            <h1>Please Login First</h1>
+                    <div class="row mb-8">
+                        <div class="col-sm-12">
+                            <h1>Welcome almighty user!</h1>
+                            
                         </div>
                     </div>
+                    
                 </div>
                 <!-- /.container-fluid -->
             </section>
@@ -70,7 +73,9 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
 
                 <div class="row">
                     <!-- left column -->
-                    <div class="col-md-8">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
@@ -116,8 +121,10 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
 
                         </div>
                     </div>
+                    <div class="col-md-3">
+                    </div>
                 </div>
             </section>
-        </div>
+       
     </div>
 </body>
