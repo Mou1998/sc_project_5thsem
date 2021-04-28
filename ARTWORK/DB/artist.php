@@ -11,7 +11,6 @@ $a_name = $_POST['a_name'];
 $dob = $_POST['dob'];
 $address = $_POST['address'];
 $style = $_POST['style'];
-
 $check_c="SELECT * from artists WHERE name='$a_name' ";
 $run_query=mysqli_query($dbcon,$check_c);
 
@@ -20,22 +19,29 @@ if(mysqli_num_rows($run_query)>0)
 ?>
     <script type="text/javascript"> 
         alert('Artist is already exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "home.php";
     </script>;
 <?php
 exit();
 }
 
 $saveartist="INSERT into artists (name,dob,address,style_of_art) VALUES ('$a_name','$dob','$address','$style')";
-mysqli_query($dbcon,$saveartist);
+if(mysqli_query($dbcon,$saveartist)){
 
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "home.php";
     </script>;
 <?php				
-
+}
+else {
+    ?><script type="text/javascript"> 
+        alert('Sql not run'); 
+       window.location.href = "home.php";
+    </script>;
+<?php  ?>
+}
 }
 //artist address edit
 if(isset($_POST['edit']))
@@ -51,7 +57,7 @@ if(mysqli_num_rows($run_query)<1)
 ?>
     <script type="text/javascript"> 
         alert('Artist does not exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "home.php";
     </script>;
 <?php
 exit();
@@ -63,7 +69,7 @@ mysqli_query($dbcon,$editartist);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "home.php";
     </script>;
 <?php				
 
@@ -82,7 +88,7 @@ if(mysqli_num_rows($run_query)<1)
 ?>
     <script type="text/javascript"> 
         alert('Artist does not exist,Please try another one!'); 
-        window.location.href = "index.html";
+        window.location.href = "home.php";
     </script>;
 <?php
 exit();
@@ -94,7 +100,7 @@ mysqli_query($dbcon,$deleteartist);
 ?>
     <script type="text/javascript"> 
 	    alert('Data successfully saved'); 
-	   window.location.href = "index.html";
+	   window.location.href = "home.php";
     </script>;
 <?php				
 
