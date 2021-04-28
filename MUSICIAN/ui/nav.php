@@ -14,6 +14,8 @@ exit;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+   
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
@@ -102,7 +104,7 @@ exit;
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <!--<li class="nav-item has-treeview">
                             <a href="allindex.php" class="nav-link">
                                 <i class="nav-icon fas fa-anchor"></i>
                                 <p>
@@ -110,112 +112,105 @@ exit;
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                        </li>
+                        </li>-->
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-user-secret"></i>
                                 <p>
                                     MUSICIAN
-                                     <!--<i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">3</span>-->
+                                     <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
-                            <!--<ul class="nav nav-treeview">
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="addmusician.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-info"></i>
                                         <p>ADD MUSICIAN</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="musicianeditdlt.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-warning"></i>
-                                        <p>EDIT MUSICIAN</p>
+                                        <p>VIEW DATA</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon far fa-circle text-danger"></i>
-                                        <p>REMOVE MUSICIAN</p>
-                                    </a>
-                                </li>
+                                
 
-                            </ul>-->
+                            </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-headphones"></i>
                                 <p>
                                     ALBUM
-                                     <!--<i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">2</span>-->
+                                     <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
-                           <!-- <ul class="nav nav-treeview">
+                           <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="addalbum.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-info"></i>
                                         <p>ADD ALBUM</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="albumeditdlt.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-warning"></i>
                                         <p>VIEW ALBUM</p>
                                     </a>
                                 </li>
 
 
-                            </ul>-->
+                            </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-music"></i>
                                 <p>
                                     SONG
-                                     <!--<i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">2</span>-->
+                                     <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
-                            <!--<ul class="nav nav-treeview">
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="addsong.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-info"></i>
                                         <p>ADD SONG</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="songeditdlt.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-warning"></i>
-                                        <p>EDIT SONG</p>
+                                        <p>VIEW SONG</p>
                                     </a>
                                 </li>
-                            </ul>-->
+                            </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    REPORTS
-                                     <!--<i class="fas fa-angle-left right"></i>
-                                   <span class="badge badge-info right">2</span>-->
-                                </p>
+                                <p>REPORTS
+                                     <i class="fas fa-angle-left right"></i>
+                                   <span class="badge badge-info right">2</span></p>
                             </a>
-                           <!-- <ul class="nav nav-treeview">
+                           <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="report1.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-info"></i>
                                         <p>REPORT 1</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="report2.php" class="nav-link">
                                         <i class="nav-icon far fa-circle text-warning"></i>
                                         <p>REPORT 2</p>
                                     </a>
                                 </li>
-                            </ul>-->
+                            </ul>
                             <li class="nav-item">
                                 <a href="logout.php" class="nav-link">
                                     <i class="nav-icon fas fa-key"></i>

@@ -30,7 +30,7 @@ include 'nav.php';
     </form>
     <!-- <hr class="rounded"> -->
     <br>
-    <form action="albumfrm.php" method="POST">
+    <form action="addalbum.php" method="POST">
       <h3 class="sub-heading">ALBUM DETAILS</h3>
       <section class="album">
         <button class="button" name="add" type="submit">Add Album</button>
