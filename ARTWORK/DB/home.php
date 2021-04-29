@@ -4,11 +4,6 @@
         echo "connection Error";
         exit();
     }
-    else{?>
-        <script type="text/javascript"> 
-            alert('DBConnection Successfull'); 
-        </script>;
-    <?php }
 ?>
 <!DOCTYPE html>
 <html lang="en">
