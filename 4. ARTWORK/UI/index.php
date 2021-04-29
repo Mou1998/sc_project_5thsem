@@ -79,7 +79,7 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Album Management System</h3>
+                                <h3 class="card-title">Artwork Management System</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
