@@ -1,5 +1,6 @@
 <?php
 include 'nav.php';
+include 'dbcon.php';
 ?>
 
         <!-- Content Wrapper. Contains page content -->
@@ -27,7 +28,10 @@ include 'nav.php';
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                <?php                             
+                                $result = $dbcon->query("SELECT count(Name) from musicians")->fetch_array();  
+                                ?>                   
+                                 <h3><?php echo $result[0]; ?></h3>
                                     <p>MUSICIAN</p>
                                 </div>
                                 <div class="icon">
@@ -41,7 +45,11 @@ include 'nav.php';
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                <?php                             
+                                $result = $dbcon->query("SELECT count(A_Name) from albums")->fetch_array();  
+                                                            
+                                 ?>
+                                    <h3><?php echo $result[0]; ?></h3>
 
                                     <p>ALBUM</p>
                                 </div>
@@ -56,7 +64,11 @@ include 'nav.php';
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                <?php                             
+                                $result = $dbcon->query("SELECT count(Author) from songs")->fetch_array();  
+                                                            
+                                 ?>
+                                   <h3><?php echo $result[0]; ?></h3>
 
                                     <p>SONG</p>
                                 </div>
@@ -71,7 +83,7 @@ include 'nav.php';
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3>2</h3>
 
                                     <p>REPORTS</p>
                                 </div>

@@ -12,7 +12,7 @@ $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 if (isset($logins[$Username]) && $logins[$Username] == $Password){
 /* Success: Set session variables and redirect to Protected page  */
 $_SESSION['UserData']['Username']=$logins[$Username];
-header("location:home.php");
+header("location:dashboard.php");
 exit;
 } else {
 /*Unsuccessful attempt: Set error message */
@@ -50,31 +50,10 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<style>
-
-
-  body{
-      background-image: url("bg.jpg");
-      background-color: #0A0420; /* Used if the image is unavailable */
-      height: 600px; /* You must set a specified height */
-      /* background-position: center;  */
-      background-repeat: no-repeat; /* Do not repeat the image */
-      background-size: 100vw;
-      font-family: 'Noto Sans', sans-serif;
-  }
-  
-  h1{
-    text-align: center; 
-    color: rgb(247, 243, 250); 
-    font-weight: 600; 
-    margin-bottom: 20px;
-	font-family: 'Noto Sans', sans-serif;}
-          
-</style>
     <div class="wrapper">
         
             <section class="content-header">
@@ -100,7 +79,7 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Artwork Management System</h3>
+                                <h3 class="card-title">Album Management System</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
