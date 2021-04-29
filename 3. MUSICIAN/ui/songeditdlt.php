@@ -23,9 +23,49 @@ if(isset($_GET['edit_id']))
 	#$musician = $_POST['ssn'];
 	#$musi_array = explode ("," , $musician);
             if(count($_POST)>0) {
-				mysqli_query($dbcon,"UPDATE songs set Title = '" . $_POST['Title'] . "' , Author = '" . $_POST['Author'] . "' , A_Id = '" . $_POST['A_Id'] . "'  WHERE Title='" . $_POST['Title'] . "' ");
-				$message = "Song Modified Successfully";
-				}
+            	$Title=$_POST['Title'];
+            	$Ssn=$_POST['Ssn'];
+            	$sql="SELECT Ssn,Title FROM performs WHERE Ssn = '$Ssn' AND Title = '$Title'";
+            	if($result=mysqli_query($dbcon,$sql)){
+            		if(mysqli_num_rows($result)<1){
+            			$saveperform="INSERT into performs (Ssn,Title) VALUES ('$Ssn','$Title')";
+	        			if(mysqli_query($dbcon,$saveperform)){
+	        				?>
+					        <script type="text/javascript"> 
+					        alert('Modify Successfully'); 
+					        window.location.href = "songeditdlt.php";
+					        </script>;
+		    				<?php
+	        			}
+	        			else{
+	        				?>
+				        <script type="text/javascript"> 
+				        alert('Modify not done'); 
+				        window.location.href = "songeditdlt.php";
+				        </script>;
+	    				<?php
+	        			}
+            		}
+            		else{
+            			?>
+				        <script type="text/javascript"> 
+				        alert('Musician already Exist'); 
+				        window.location.href = "songeditdlt.php";
+				        </script>;
+	    				<?php
+            		}
+            	}
+            	else{
+            		?>
+				        <script type="text/javascript"> 
+				        alert('checkin existance faild'); 
+				        window.location.href = "songeditdlt.php";
+				        </script>;
+	    				<?php
+            	}
+				/*mysqli_query($dbcon,"UPDATE songs set Title = '" . $_POST['Title'] . "' , Author = '" . $_POST['Author'] . "' , A_Id = '" . $_POST['A_Id'] . "'  WHERE Title='" . $_POST['Title'] . "' ");
+				$message = "Song Modified Successfully";*/
+			}
 				$result = mysqli_query($dbcon,"SELECT * FROM songs WHERE Title='" . $_GET['edit_id'] . "'");
 				$row= mysqli_fetch_array($result);
 	?>
@@ -51,9 +91,18 @@ if(isset($_GET['edit_id']))
         <label for="exampleFormControlInput1" class="form-label">Song Title:</label>
 		<input type="text" class="form-control" name="Title" class="txtField" value="<?php echo $row['Title']; ?>">
 		<label for="exampleFormControlInput1" class="form-label">Author Name:</label>
-		<input type="text" class="form-control" name="Author" class="txtField" value="<?php echo $row['Author']; ?>">
-		<label for="exampleFormControlInput1" class="form-label">Author Id:</label>
-		<input type="text" class="form-control" name="A_Id" class="txtField" value="<?php echo $row['A_Id']; ?>">
+		<input type="text" class="form-control" name="Author" class="txtField" value="<?php echo $row['Author']; ?>" disabled />
+		<label for="exampleFormControlInput1" class="form-label">Album Id:</label>
+		<input type="text" class="form-control" name="A_Id" class="txtField" value="<?php echo $row['A_Id']; ?>"disabled />
+		<label for="exampleFormControlInput1" class="form-label">Musician Name:</label>
+				    <select name="Ssn">
+				      <option value="">--Select Musicians--</option>
+				      <?php $sql = "SELECT Ssn,Name FROM musicians WHERE Existance IS NOT NULL";
+							$result = mysqli_query($dbcon,$sql);
+							while ($row = $result->fetch_array()) {
+				    			echo "<option value='" . $row["Ssn"] . "'>" . $row["Ssn"] . " -> " . $row["Name"] . "</option>";
+							} ?>
+				    </select>
        
 		<hr><input type="submit" class="btn btn-warning" name="submit" value="Submit" class="buttom">
 	</form>
@@ -85,6 +134,7 @@ if(isset($_GET['edit_id']))
 				<th>Title</th>
 				<th>Author</th>
 				<th>A_Id</th>
+				<th>No of Musicians</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -106,6 +156,16 @@ if (mysqli_num_rows($stmt)>0)
 				<td><?php echo $Title; ?></td>
 				<td><?php echo $Author;?></td>
 				<td><?php echo $A_Id; ?></td>
+				<td>
+					<?php
+						$sql="SELECT Title, count('Ssn') FROM performs WHERE Title = '$Title' GROUP BY Title";
+						if($result=mysqli_query($dbcon,$sql)){
+							while ($result1 = mysqli_fetch_assoc($result)){
+								echo $result1["count('Ssn')"];
+							}
+						}
+					?>
+				</td>
 				<td>
 					<a class="btn btn-danger" href="songeditdlt.php?del_id=<?php echo $row['Title']; ?>">Delete</a>
 					<a class="btn btn-success" href="songeditdlt.php?edit_id=<?php echo $row['Title']; ?>">Edit</a>

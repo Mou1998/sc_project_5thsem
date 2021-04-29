@@ -20,10 +20,36 @@ if(isset($_GET['edit_id']))
 	{
 				include_once 'dbcon.php';
 				if(count($_POST)>0) {
-				mysqli_query($dbcon,"UPDATE musicians set Name = '" . $_POST['Name'] . "' , Ph_No = '" . $_POST['Ph_No'] . "' , Existance = '" . $_POST['Existance'] . "'  WHERE Ssn='" . $_POST['Ssn'] . "' ");
-				$message = "Record Modified Successfully";
+					$m_ph=$_POST['Ph_No'];
+					$m_add=$_POST['Address'];
+					$m_id=$_POST['Ssn'];
+					$m_name=$_POST['Name'];
+					$check_c="select * from addresses WHERE (Ph_No='$m_ph' and not FullAddress='$m_add') or (not Ph_No='$m_ph' and FullAddress='$m_add') ";
+    $run_query=mysqli_query($dbcon,$check_c);
+        
+        if(mysqli_num_rows($run_query)>0)
+        {
+            //echo "<script>alert('There may be wrong information,Please try again!')</script>";
+            // echo"<script>window.open('musicianform.php','_self')</script>";
+        
+        }
+    
+    $check_a="select * from addresses WHERE (Ph_No='$m_ph' and FullAddress='$m_add') ";
+    $run_query=mysqli_query($dbcon,$check_a);
+            
+        if(mysqli_num_rows($run_query)<1)
+        {
+            $musiaddress="INSERT into addresses (Ph_No,FullAddress) VALUE ('$m_ph','$m_add')";
+            mysqli_query($dbcon,$musiaddress);
+        }
+        
+    $savemusician="UPDATE musicians set Name = '$m_name' , Ph_No = '$m_ph' WHERE Ssn='$m_id' ";
+    mysqli_query($dbcon,$savemusician);
+
+				/*mysqli_query($dbcon,"UPDATE musicians set Name = '" . $_POST['Name'] . "' , Ph_No = '" . $_POST['Ph_No'] . "' , Existance = '" . $_POST['Existance'] . "'  WHERE Ssn='" . $_POST['Ssn'] . "' ");
+				$message = "Record Modified Successfully";*/
 				}
-				$result = mysqli_query($dbcon,"SELECT * FROM musicians WHERE Ssn='" . $_GET['edit_id'] . "'");
+				$result = mysqli_query($dbcon,"SELECT Ssn, Name, musicians."."Ph_No, FullAddress FROM musicians, addresses WHERE Ssn='" . $_GET['edit_id'] . "'"."AND musicians.Ph_No = addresses.Ph_No");
 				$row= mysqli_fetch_array($result);
 ?>
 
@@ -50,9 +76,9 @@ if(isset($_GET['edit_id']))
 		<input type="text" class="form-control" name="Name" class="txtField" value="<?php echo $row['Name']; ?>">
 		<label for="exampleFormControlInput1" class="form-label">Phone No:</label>
 		<input type="text" class="form-control" name="Ph_No" class="txtField" value="<?php echo $row['Ph_No']; ?>">
-		<label for="exampleFormControlInput1" class="form-label">Existance:</label>
-		<input type="text" class="form-control" name="Existance" class="txtField"
-			value="<?php echo $row['Existance']; ?>">
+		<label for="exampleFormControlInput1" class="form-label">Address:</label>
+		<input type="text" class="form-control" name="Address" class="txtField"
+			value="<?php echo $row['FullAddress']; ?>">
 		<hr><input type="submit" class="btn btn-warning" name="submit" value="Submit" class="buttom">
 	</form>
 </div>
@@ -83,7 +109,7 @@ if(isset($_GET['edit_id']))
 				<th>SSN</th>
 				<th>Name</th>
 				<th>PHN No</th>
-				<th>Existance</th>
+				<th>Address</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -91,7 +117,7 @@ if(isset($_GET['edit_id']))
 			<?php
 include("dbcon.php");
 
-$stm = "select * from musicians where Existance='Exist'";
+$stm = "SELECT Ssn, Name, musicians."."Ph_No, FullAddress FROM musicians, addresses WHERE Existance='Exist' AND musicians.Ph_No = addresses.Ph_No";
 $stmt=mysqli_query($dbcon,$stm);
 
 if (mysqli_num_rows($stmt)>0) 
@@ -105,7 +131,7 @@ if (mysqli_num_rows($stmt)>0)
 				<td><?php echo $Ssn; ?></td>
 				<td><?php echo $Name; ?></td>
 				<td><?php echo $Ph_No; ?></td>
-				<td><?php echo $Existance; ?></td>
+				<td><?php echo $FullAddress; ?></td>
 				<td>
 					<a class="btn btn-danger" href="musicianeditdlt.php?del_id=<?php echo $row['Ssn']; ?>">Delete</a>
 					<a class="btn btn-success" href="musicianeditdlt.php?edit_id=<?php echo $row['Ssn']; ?>">Edit</a>

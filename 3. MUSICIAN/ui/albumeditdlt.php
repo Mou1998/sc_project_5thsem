@@ -85,7 +85,7 @@ if(isset($_GET['edit_id']))
 				<th>Copyright_Date</th>
 				<th>Format</th>
                 <th>Ssn</th>
-				<th>Action</th>
+				<!--<th>Action</th>-->
 			</tr>
 		</thead>
 		<tbody>
@@ -108,10 +108,10 @@ if (mysqli_num_rows($stmt)>0)
 				<td><?php echo $Copyright_Date; ?></td>
 				<td><?php echo $Format; ?></td>
                 <td><?php echo $Ssn; ?></td>
-				<td>
-					<a class="btn btn-danger" href="albumeditdlt.php?del_id=<?php echo $row['A_Id']; ?>">Delete</a>
-					<a class="btn btn-success" href="albumeditdlt.php?edit_id=<?php echo $row['A_Id']; ?>">Edit</a>
-				</td>
+				<!--<td>
+					<a class="btn btn-danger" href="albumeditdlt.php?del_id=<?php/* echo $row['A_Id']; */?>">Delete</a>
+					<a class="btn btn-success" href="albumeditdlt.php?edit_id=<?php/* echo $row['A_Id']; */?>">Edit</a>
+				</td>-->
 			</tr>
 			<?php
 	}
