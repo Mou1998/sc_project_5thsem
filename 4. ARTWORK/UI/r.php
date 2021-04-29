@@ -159,7 +159,7 @@ else { ?>
           <input type="submit" class="button-generate" name="genarate" value="Genarate">
         </form>
       </div>
-      <a href="dashboard.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
+      <a href="home.php" class="btn btn-primary btn-lg" role="button" data-bs-toggle="button">Go Back to Home</a>
 
                   
       
