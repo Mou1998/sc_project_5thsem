@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 02:51 PM
+-- Generation Time: Apr 29, 2021 at 12:35 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `addresses` (
-  `Ph_No` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `Ph_No` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `FullAddress` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -37,12 +37,24 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`Ph_No`, `FullAddress`) VALUES
-('011', 'Howrah'),
-('0123', 'Kolkata'),
-('12', '21ab'),
-('123', 'abcd'),
-('123456789', 'abcd'),
-('456', '456abc');
+('1111112222', '75, Nadia'),
+('11234556678', '41, Chetla'),
+('1123456789', '91, Behala'),
+('1234556678', '451, Golfgreen'),
+('1234556789', '45, Golpark'),
+('1234567890', '9, Murshidabad'),
+('33333336666', '70,B.B. Street'),
+('3698521470', '34, Midnapore'),
+('4444555566', '56, Murshidabad'),
+('4563289710', '91, C.I.T Road'),
+('9856321000', '787, Belur'),
+('9856321470', '31, Rasbehari Avenew'),
+('9856321471', '56, Dharmatala'),
+('98563214789', '90, Ramnagar'),
+('9874563210', '78, Belur'),
+('9876554321', '9, B.B.D. Bag'),
+('9955521000', '89, Chowrongee'),
+('9956321000', '89, Saltlake');
 
 -- --------------------------------------------------------
 
@@ -51,44 +63,33 @@ INSERT INTO `addresses` (`Ph_No`, `FullAddress`) VALUES
 --
 
 CREATE TABLE `albums` (
-  `A_Id` int(100) NOT NULL,
+  `A_Id` int(4) NOT NULL,
   `A_Name` text COLLATE utf8_unicode_ci NOT NULL,
   `Copyright_Date` date NOT NULL,
-  `Format` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `SSn` int(100) NOT NULL
+  `Format` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Ssn` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `albums`
 --
 
-INSERT INTO `albums` (`A_Id`, `A_Name`, `Copyright_Date`, `Format`, `SSn`) VALUES
-(1, 'abc', '2021-04-25', 'cd', 3),
-(2, 'ab', '2021-04-25', 'dvd', 4),
-(3, 'a', '2010-04-05', 'cd', 3),
-(4, 'a2', '2010-10-05', 'cd', 3),
-(5, 'aa', '2011-05-05', 'dvd', 3),
-(9, 'ab', '2010-01-15', 'dvd', 3),
-(10, 'ac', '2010-07-25', 'dvd', 3),
-(11, 'ad', '2010-03-05', 'dvd', 3),
-(12, 'ae', '2011-06-05', 'dvd', 3),
-(13, 'af', '2012-10-10', 'dvd', 3),
-(14, 'ag', '2011-05-05', 'dvd', 2),
-(15, 'ah', '2015-05-05', 'dvd', 2),
-(16, 'ai', '2014-11-17', 'dvd', 2),
-(17, 'jk', '2014-05-13', 'dvd', 2),
-(18, 'aj', '2015-10-17', 'dvd', 2),
-(19, 'akl', '2011-05-05', 'dvd', 4),
-(20, 'am', '2011-12-03', 'dvd', 4),
-(21, 'ao', '2014-06-05', 'dvd', 4),
-(22, 'ap', '2014-01-01', 'dvd', 4),
-(23, 'aq', '2013-02-05', 'dvd', 4),
-(24, 'ar', '2019-08-11', 'dvd', 1),
-(25, 'as', '2018-05-23', 'dvd', 1),
-(26, 'auyt', '2018-06-25', 'dvd', 1),
-(27, 'at', '2012-06-15', 'dvd', 1),
-(28, 'Vande Mataram ', '1997-12-01', 'cd', 18),
-(29, 'Raunaq', '2014-07-01', 'dvd', 18);
+INSERT INTO `albums` (`A_Id`, `A_Name`, `Copyright_Date`, `Format`, `Ssn`) VALUES
+(1, 'Tomar songe', '2016-08-10', 'CD', 6),
+(2, 'Nibehon', '2018-09-25', 'CD', 6),
+(3, 'Aladin', '2019-06-12', 'MC', 2),
+(4, 'Aladin', '2018-09-25', 'MC', 2),
+(5, 'Kedarnath', '2019-07-25', 'MC', 1),
+(6, 'Khola Hawa', '2017-09-23', 'CD', 13),
+(7, 'Tomar Sange', '2020-01-08', 'MC', 17),
+(8, 'Chanddo', '2017-06-21', 'MC', 18),
+(9, 'Niharika', '2021-04-07', 'CD', 8),
+(11, 'Yatra', '2015-07-31', 'CD', 9),
+(12, 'prakton', '2016-11-18', 'MC', 4),
+(13, 'Britto', '2018-05-15', 'MC', 14),
+(14, 'Dujne dekha Holo', '1997-05-12', 'CD', 13),
+(15, 'Hiyar Majhe', '2007-05-09', 'CD', 8),
+(16, '50 Ways', '2011-09-22', 'MC', 13);
 
 -- --------------------------------------------------------
 
@@ -106,81 +107,30 @@ CREATE TABLE `instruments` (
 --
 
 INSERT INTO `instruments` (`Ins_Name`, `Musicalkey`) VALUES
-(' shehnai', 'B_FlAT'),
-(' shehnai', 'C'),
-(' shehnai', 'E_FLAT'),
-('Acoustic guitar', 'B_FlAT'),
-('Acoustic guitar', 'C'),
-('Acoustic guitar', 'E_FLAT'),
-('aktara', 'B_FlAT'),
-('aktara', 'C'),
-('aktara', 'E_FLAT'),
-('bamboo flute', 'B_FlAT'),
-('bamboo flute', 'C'),
-('bamboo flute', 'E_FLAT'),
-('Bass guitar', 'B_FlAT'),
-('Bass guitar', 'C'),
-('Bass guitar', 'E_FLAT'),
-('Classical guitar', 'B_FlAT'),
-('Classical guitar', 'C'),
-('Classical guitar', 'E_FLAT'),
-('dotara', 'B_FlAT'),
-('dotara', 'C'),
-('dotara', 'E_FLAT'),
-('earthen drum', 'B_FlAT'),
-('earthen drum', 'C'),
-('earthen drum', 'E_FLAT'),
-('Electric guitar', 'B_FlAT'),
-('Electric guitar', 'C'),
-('Electric guitar', 'E_FLAT'),
-('Guitar', 'B_FlAT'),
-('Guitar', 'C'),
-('Guitar', 'E_FLAT'),
-('Guitar synthesizer', 'B_FlAT'),
-('Guitar synthesizer', 'C'),
-('Guitar synthesizer', 'E_FLAT'),
-('Guitarra quinta huapanguera', 'B_FlAT'),
-('Guitarra quinta huapanguera', 'C'),
-('Guitarra quinta huapanguera', 'E_FLAT'),
-('Gut-stringed guitars', 'B_FlAT'),
-('Gut-stringed guitars', 'C'),
-('Gut-stringed guitars', 'E_FLAT'),
-('harmonium', 'B_FlAT'),
-('harmonium', 'C'),
-('harmonium', 'E_FLAT'),
-('Keyboard', 'B_FlAT'),
-('Keyboard', 'C'),
-('Keyboard', 'E_FLAT'),
-('khol drum', 'B_FlAT'),
-('khol drum', 'C'),
-('khol drum', 'E_FLAT'),
-('m', 'B_FlAT'),
-('m', 'C'),
-('m', 'E_FLAT'),
-('n', 'B_FlAT'),
-('n', 'C'),
-('n', 'E_FLAT'),
-('o', 'B_FlAT'),
-('o', 'C'),
-('o', 'E_FLAT'),
-('Piano', 'B_FlAT'),
-('Piano', 'C'),
-('Piano', 'E_FLAT'),
-('plucked drum', 'B_FlAT'),
-('plucked drum', 'C'),
-('plucked drum', 'E_FLAT'),
-('santoor', 'B_FlAT'),
-('santoor', 'C'),
-('santoor', 'E_FLAT'),
-('Saxophone', 'B_FlAT'),
-('Saxophone', 'C'),
-('Saxophone', 'E_FLAT'),
-('sitar', 'B_FlAT'),
-('sitar', 'C'),
-('sitar', 'E_FLAT'),
-('Violin', 'B_FlAT'),
-('Violin', 'C'),
-('Violin', 'E_FLAT');
+(' Drum', 'B_FlAT'),
+(' Drum', 'C'),
+(' Drum', 'E_FLAT'),
+('Guitter', 'B_FlAT'),
+('Guitter', 'C'),
+('Guitter', 'E_FLAT'),
+('Harmonium', 'B_FlAT'),
+('Harmonium', 'C'),
+('Harmonium', 'E_FLAT'),
+('Mridanga', 'B_FlAT'),
+('Mridanga', 'C'),
+('Mridanga', 'E_FLAT'),
+('Onestring', 'B_FlAT'),
+('Onestring', 'C'),
+('Onestring', 'E_FLAT'),
+('Setar', 'B_FlAT'),
+('Setar', 'C'),
+('Setar', 'E_FLAT'),
+('Synthesizer', 'B_FlAT'),
+('Synthesizer', 'C'),
+('Synthesizer', 'E_FLAT'),
+('Tanpura', 'B_FlAT'),
+('Tanpura', 'C'),
+('Tanpura', 'E_FLAT');
 
 -- --------------------------------------------------------
 
@@ -189,9 +139,9 @@ INSERT INTO `instruments` (`Ins_Name`, `Musicalkey`) VALUES
 --
 
 CREATE TABLE `musicians` (
-  `Ssn` int(100) NOT NULL,
+  `Ssn` int(4) NOT NULL,
   `Name` text COLLATE utf8_unicode_ci NOT NULL,
-  `Ph_No` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `Ph_No` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `Existance` text COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Exist'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -200,24 +150,29 @@ CREATE TABLE `musicians` (
 --
 
 INSERT INTO `musicians` (`Ssn`, `Name`, `Ph_No`, `Existance`) VALUES
-(1, 'abc', '123', 'Exist'),
-(2, 'aaaaa', '456', 'Exist'),
-(3, 'a', '12', 'Exist'),
-(4, 'a', '12', 'Exist'),
-(5, 'Samar', '456', 'Exist'),
-(6, 'Subham', '456', 'Exist'),
-(7, 'Sayak', '123456789', 'Exist'),
-(8, 'S', '011', 'Exist'),
-(9, 'Russo', '123456789', 'Exist'),
-(10, 'Chandramouli', '123456789', 'Exist'),
-(11, 'Lalan Fakir', '0123', 'Exist'),
-(12, 'Ustad Bismillah Khan', '0123', 'Exist'),
-(13, 'Pandit Ravi Shankar', '0123', 'Exist'),
-(14, 'Hariprasad Chaurasia', '011', 'Exist'),
-(15, 'Pandit Shivkumar Sharma', '011', 'Exist'),
-(16, 'R.D. Burman', '0123', 'Exist'),
-(17, 'Jagjit Singh', '456', 'Exist'),
-(18, 'AR Rahman', '0123', 'Exist');
+(1, 'Arijit Singh', '1234567890', 'Not_Exist'),
+(2, 'Monali Thakur', '1123456789', 'Exist'),
+(3, 'Upal Sengupta', '1234556789', 'Not_Exist'),
+(4, 'Anindya Chatterjee', '1234556789', 'Exist'),
+(5, 'Surajit Banerjee', '1234556678', 'Exist'),
+(6, 'Sraboni Sen', '11234556678', 'Exist'),
+(7, 'Shovan Ganguly', '9874563210', 'Exist'),
+(8, 'Iman Chakraborty', '9856321000', 'Exist'),
+(9, 'Kaushiki Chakraborty', '9956321000', 'Exist'),
+(10, 'Kabita Krisnamurti', '4563289710', 'Exist'),
+(11, 'Kushal Deb', '3698521470', 'Exist'),
+(12, 'Kush Deb', '3698521470', 'Exist'),
+(13, 'Kiran Bedi', '1234556789', 'Not_Exist'),
+(14, 'Karuna Bedi', '1234556789', 'Exist'),
+(15, 'Tanmoy Das', '1111112222', 'Exist'),
+(16, 'Tinni Das', '1111112222', 'Exist'),
+(17, 'Shampa Ghosh', '1111112222', 'Exist'),
+(18, 'Shampa Ghoshal', '98563214789', 'Exist'),
+(19, 'Kaushik Paul', '33333336666', 'Exist'),
+(20, 'Rahul Tribedi', '4444555566', 'Exist'),
+(21, 'Rik Bose', '9856321471', 'Exist'),
+(22, 'Ravi Sankar', '33333336666', 'Exist'),
+(23, 'Karaikudi Mani', '1234567890', 'Exist');
 
 -- --------------------------------------------------------
 
@@ -226,7 +181,7 @@ INSERT INTO `musicians` (`Ssn`, `Name`, `Ph_No`, `Existance`) VALUES
 --
 
 CREATE TABLE `performs` (
-  `Ssn` int(100) NOT NULL,
+  `Ssn` int(4) NOT NULL,
   `Title` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -235,29 +190,36 @@ CREATE TABLE `performs` (
 --
 
 INSERT INTO `performs` (`Ssn`, `Title`) VALUES
-(9, 'song5'),
-(9, 'song8'),
-(9, 'song9'),
-(10, 'song5'),
-(10, 'song8'),
-(11, 'song6'),
-(11, 'song7'),
-(12, 'song7'),
-(16, 'song1'),
-(16, 'song2'),
-(16, 'song3'),
-(16, 'song4'),
-(16, 'song5'),
-(17, 'song1'),
-(17, 'song2'),
-(17, 'song3'),
-(17, 'song4'),
-(17, 'song5'),
-(18, 'song1'),
-(18, 'song2'),
-(18, 'song3'),
-(18, 'song4'),
-(18, 'song5');
+(1, 'Qaafiyana'),
+(4, 'Moner Guptochor'),
+(4, 'Mono moro meghero songi'),
+(5, 'Bhromor'),
+(5, 'Mono moro meghero songi'),
+(6, 'Madhuro Madhuro'),
+(6, 'Rakho Rakho Re Jibone'),
+(7, 'Mora saiyaa'),
+(7, 'Qaafiyana'),
+(8, 'Modhuro Bosonto'),
+(8, 'Mono moro meghero songi'),
+(8, 'Tai Tomar Anondo'),
+(8, 'Tumi Jake Vlobaso'),
+(9, 'Madhuro Madhuro'),
+(9, 'Rakho Rakho Re Jibone'),
+(10, 'Diboso Rajani'),
+(10, 'Eki labonne Purno Pran'),
+(10, 'Modhu Gondhey Vora'),
+(10, 'Modhuro Bosonto'),
+(10, 'Sukho Hin Nishi Din'),
+(17, 'Chokher Alo e'),
+(17, 'Jonaki Ki Sukhe'),
+(18, 'Chokher Alo e'),
+(19, 'Chokher Alo e'),
+(19, 'Jonaki Ki Sukhe'),
+(20, 'Chokher Alo e'),
+(20, 'Fool In The Rain'),
+(21, 'Fool In The Rain'),
+(22, 'Fool In The Rain'),
+(23, 'Fool In The Rain');
 
 -- --------------------------------------------------------
 
@@ -267,7 +229,7 @@ INSERT INTO `performs` (`Ssn`, `Title`) VALUES
 
 CREATE TABLE `plays` (
   `Ins_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Ssn` int(100) NOT NULL
+  `Ssn` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -275,53 +237,19 @@ CREATE TABLE `plays` (
 --
 
 INSERT INTO `plays` (`Ins_name`, `Ssn`) VALUES
-(' shehnai', 12),
-('Acoustic guitar', 7),
-('Acoustic guitar', 18),
-('aktara', 11),
-('bamboo flute', 14),
-('Bass guitar', 7),
-('Bass guitar', 18),
-('Classical guitar', 8),
-('dotara', 11),
-('earthen drum', 11),
-('Electric guitar', 7),
-('Electric guitar', 10),
-('Electric guitar', 16),
-('Electric guitar', 18),
-('Guitar', 10),
-('Guitar', 16),
-('Guitar synthesizer', 5),
-('Guitar synthesizer', 6),
-('Guitar synthesizer', 7),
-('Guitar synthesizer', 18),
-('Guitarra quinta huapanguera', 5),
-('Guitarra quinta huapanguera', 6),
-('Guitarra quinta huapanguera', 7),
-('Guitarra quinta huapanguera', 18),
-('Gut-stringed guitars', 5),
-('Gut-stringed guitars', 6),
-('Gut-stringed guitars', 7),
-('Gut-stringed guitars', 18),
-('harmonium', 17),
-('Keyboard', 9),
-('Keyboard', 16),
-('khol drum', 11),
-('m', 1),
-('m', 2),
-('m', 3),
-('m', 4),
-('n', 1),
-('n', 2),
-('o', 1),
-('o', 2),
-('Piano', 9),
-('Piano', 16),
-('plucked drum', 11),
-('santoor', 15),
-('Saxophone', 9),
-('sitar', 13),
-('Violin', 16);
+(' Drum', 21),
+('Guitter', 19),
+('Guitter', 21),
+('Harmonium', 17),
+('harmonium', 18),
+('Harmonium', 19),
+('Harmonium', 20),
+('Mridanga', 23),
+('Onestring', 17),
+('Onestring', 18),
+('Setar', 22),
+('Synthesizer', 21),
+('Tanpura', 20);
 
 -- --------------------------------------------------------
 
@@ -332,7 +260,7 @@ INSERT INTO `plays` (`Ins_name`, `Ssn`) VALUES
 CREATE TABLE `songs` (
   `Title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Author` text COLLATE utf8_unicode_ci NOT NULL,
-  `A_Id` int(100) NOT NULL
+  `A_Id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -340,15 +268,24 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`Title`, `Author`, `A_Id`) VALUES
-('song1', 'author1', 27),
-('song2', 'author2', 27),
-('song3', 'author3', 27),
-('song4', 'author4', 27),
-('song5', 'author5', 27),
-('song6', 'author6', 10),
-('song7', 'author5', 10),
-('song8', 'author6', 10),
-('song9', 'author5', 10);
+('Bhromor', 'Anupam Roy', 12),
+('Chokher Alo e', 'Rabindranath Tagore', 7),
+('Diboso Rajani', 'Rabindranath Tagore', 14),
+('Eki labonne Purno Pran', 'Rabindranath Tagore', 14),
+('Fool In The Rain', 'Led Zeppelin', 16),
+('Jonaki Ki Sukhe', 'Shann Parvin', 8),
+('Madhuro Madhuro', 'Rabindranath Tagore', 11),
+('Modhu Gondhey Vora', 'Rabindranath Tagore', 14),
+('Modhuro Bosonto', 'Rabindranath Tagore', 2),
+('Moner Guptochor', 'Anupam Roy', 12),
+('Mono moro meghero songi', 'Rabindranath Tagore', 2),
+('Mora saiyaa', 'Shovan Ganguly', 13),
+('purano sei diner kotha', 'Rabindranath Tagore', 2),
+('Qaafiyana', 'Amitav Bhattacharyaa', 5),
+('Rakho Rakho Re Jibone', 'Rabindranath Tagore', 11),
+('Sukho Hin Nishi Din', 'Rabindranath Tagore', 14),
+('Tai Tomar Anondo', 'Rabindranath Tagore', 15),
+('Tumi Jake Vlobaso', 'Anupam Roy', 12);
 
 --
 -- Indexes for dumped tables
@@ -365,7 +302,7 @@ ALTER TABLE `addresses`
 --
 ALTER TABLE `albums`
   ADD PRIMARY KEY (`A_Id`),
-  ADD KEY `SSn` (`SSn`);
+  ADD KEY `Ssn` (`Ssn`);
 
 --
 -- Indexes for table `instruments`
@@ -409,13 +346,13 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `A_Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `A_Id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `musicians`
 --
 ALTER TABLE `musicians`
-  MODIFY `Ssn` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Ssn` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
@@ -425,7 +362,7 @@ ALTER TABLE `musicians`
 -- Constraints for table `albums`
 --
 ALTER TABLE `albums`
-  ADD CONSTRAINT `albums_ibfk_1` FOREIGN KEY (`SSn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `albums_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `musicians`
@@ -437,21 +374,21 @@ ALTER TABLE `musicians`
 -- Constraints for table `performs`
 --
 ALTER TABLE `performs`
-  ADD CONSTRAINT `Title` FOREIGN KEY (`Title`) REFERENCES `songs` (`Title`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `performs_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `performs_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `performs_ibfk_2` FOREIGN KEY (`Title`) REFERENCES `songs` (`Title`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `plays`
 --
 ALTER TABLE `plays`
-  ADD CONSTRAINT `Ins_name` FOREIGN KEY (`Ins_name`) REFERENCES `instruments` (`Ins_Name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `plays_ibfk_1` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `plays_ibfk_1` FOREIGN KEY (`Ins_name`) REFERENCES `instruments` (`Ins_Name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `plays_ibfk_2` FOREIGN KEY (`Ssn`) REFERENCES `musicians` (`Ssn`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `songs`
 --
 ALTER TABLE `songs`
-  ADD CONSTRAINT `A_id` FOREIGN KEY (`A_Id`) REFERENCES `albums` (`A_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `songs_ibfk_1` FOREIGN KEY (`A_Id`) REFERENCES `albums` (`A_Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
